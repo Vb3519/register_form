@@ -1,5 +1,5 @@
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  className: string;
+  className?: string;
 }
 
 // [ElementName]HTMLAttributes<ElementType>

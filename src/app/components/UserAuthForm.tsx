@@ -4,6 +4,9 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import CustomInput from '../../shared/ui/CustomInput';
 import CustomButton from '../../shared/ui/CustomButton';
 
+// Types:
+import { UserAuthFormFields } from '../../shared/types/auth.interface';
+
 const UserAuthForm = () => {
   const {
     register,
@@ -11,7 +14,7 @@ const UserAuthForm = () => {
     setError,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm<UserAuthFormFields>();
 
   return (
     <form
@@ -24,7 +27,7 @@ const UserAuthForm = () => {
       }}
     >
       <div className="w-full flex flex-col gap-1">
-        <label htmlFor="user_name" className="text-gray-500">
+        <label htmlFor="user_name" className="mr-auto text-gray-500">
           Логин
         </label>
         <CustomInput
@@ -35,7 +38,7 @@ const UserAuthForm = () => {
       </div>
 
       <div className="w-full flex flex-col gap-1">
-        <label htmlFor="user_password" className="text-gray-500">
+        <label htmlFor="user_password" className="mr-auto text-gray-500">
           Пароль
         </label>
 
